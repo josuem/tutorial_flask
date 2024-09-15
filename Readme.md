@@ -19,3 +19,14 @@ and run
 ``` bash
 flask run
 ```
+
+## Activate debugg mode
+To activate the log mode create the variable
+
+``` bash
+$env:FLASK_DEBUG=1
+```
+and rerun the server
+``` bash
+flask run
+```
