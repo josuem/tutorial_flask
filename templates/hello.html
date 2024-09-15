@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% import 'macros.html' as macro %}
+
+{% block title%}
+	{# super es usado para continuar el texto del template #}
+	{{ super() }}
+	Uso de templates
+{% endblock %}
+
+{% block content %}
+	{% if user_ip %}
+	<h1>Hello World test. Tu IP es: {{ user_ip }}</h1>
+	{% else %}
+	<a href="{{ url_for('index') }}">Ir a inicio</a>
+	{% endif %}
+
+	<ul>
+		{% for todo in TODOS %}
+			{{ macro.render_todo(todo) }}
+		{% endfor %}
+	</ul>
+{% endblock %}
