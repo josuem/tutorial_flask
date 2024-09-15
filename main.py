@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 TODOS = ["Ir al cerro", "Estudiar flask", "Hacer pagina sensor"]
 
+@app.errorhandler(404)
+def not_found(error):
+	return render_template("404.html", error=error)
+
 @app.route('/')
 def index():
 	use_ip = request.remote_addr
